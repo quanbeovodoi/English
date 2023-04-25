@@ -1,6 +1,10 @@
 .card {
     position: relative;
     max-width: 250px;
+    @media only screen and (max-width: 620px){
+      max-width: 450px;
+      margin: 0 auto;
+    }
     overflow: hidden;
     
     img{

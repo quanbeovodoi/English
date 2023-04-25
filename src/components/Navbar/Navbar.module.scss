@@ -1,0 +1,40 @@
+.menu{
+    display: flex;
+    @media only screen and (max-width: 960px) {
+        display: none;
+    }
+    .item{
+        font-size: 1.5rem;
+        padding: 35px;
+    }
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.humberger{
+    cursor: pointer;
+    position: relative;
+    display: none;
+    text-align: center;
+    @media only screen and (max-width: 960px) {
+        display: flex;
+    }
+    .iconHumberger{
+        padding: 15px;
+    }
+    .menu-humberger{
+        position: absolute;
+        z-index: 9999;
+        top: 50px;
+        right: 0;
+        color: #000;
+        background-color: #fff;
+        box-shadow: rgba(39, 39, 39, 0.348) 0px 2px 8px;
+        .item{
+            padding: 25px 40px;
+            width: 100%;
+        }
+    }
+}

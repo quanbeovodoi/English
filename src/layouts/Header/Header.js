@@ -1,10 +1,7 @@
 import classNames from 'classnames/bind';
 import style from './Header.module.scss';
-import Button from '~/components/Button';
-import data from '~/config/data';
-import CartIcon from '~/components/CartIcon';
+import Navbar from '~/components/Navbar';
 const cx = classNames.bind(style);
-const HeaderMenu = data.menuHeading;
 function Header() {
   
   return (
@@ -14,14 +11,7 @@ function Header() {
           <img src={require("../../assets/Images/kingback-website-favicon-black.png")}></img>
           <h1 className={cx('title')}>KingBack</h1>
         </div>
-        <ul className={cx('menu')}>
-          {HeaderMenu.map((item,index)=><li key={index}>
-            <Button className={cx('item')} transparent effect to={item.url} data_hover={item.title}>{item.title}</Button>
-          </li>)}
-          <li>
-          <CartIcon className={cx('item')}/>
-          </li>
-        </ul>
+        <Navbar/>
       </div>
     </div>
   );
