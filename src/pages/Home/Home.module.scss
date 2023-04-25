@@ -1,0 +1,118 @@
+.image_slide {
+  width: 100%;
+  max-height: 750px;
+  object-fit: cover;
+}
+.slideContainer{
+  position: relative;
+  .text{
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    h2{
+      font-size: 56px;
+      font-weight: 200;
+      padding: 15px;
+    }
+  }
+}
+.cate {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px 0;
+}
+.products {
+  .title {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    color: var(--primary);
+    padding: 30px 0;
+    &::after {
+      content: '';
+      background-color: var(--primary);
+      display: block;
+      width: 100%;
+      height: 2px;
+    }
+  }
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  padding: 20px 0;
+}
+.cate .box {
+  display: flex;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 10px;
+  position: relative;
+  img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
+  .title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+    padding: inherit;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    .text {
+      background-color: #878787;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 15px;
+    }
+  }
+}
+.shipping {
+    width: fit-content;
+    margin: 0 auto;
+  display: flex;
+  .box {
+    flex: 0 0 25%;
+    display: flex;
+    height: 100px;
+    background: #f3f3f3;
+    border-right: 1px solid #fff;
+    padding-left: 25px;
+    align-items: center;
+    .icon {
+      color: var(--primary);
+      font-size: 30px;
+    }
+    .benefits {
+      padding-left: 22px;
+      h6 {
+        text-transform: uppercase;
+        line-height: 18px;
+        font-weight: 500;
+        margin-bottom: 0;
+        text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+        font-size: 14px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 0;
+        color: #51545f;
+      }
+    }
+  }
+}

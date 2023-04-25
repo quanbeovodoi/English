@@ -1,0 +1,30 @@
+.heading{
+  padding: 15px;
+  background-color: var(--primary);
+  color: #fff;
+}
+.area{
+  width: fit-content;
+  max-height: 500px;
+  margin: 15px;
+  overflow-y:scroll;
+}
+.wrapper{
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: rgba(39, 39, 39, 0.348) 0px 2px 8px;
+}
+.next-prev{
+  display: flex;
+  font-size: 2rem;
+  padding: 5px;
+  .next,.prev{
+    cursor: pointer;
+    padding: 5px;
+  }
+}
+.eventHandle{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}

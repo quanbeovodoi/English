@@ -1,0 +1,18 @@
+.wrapper{
+    position: relative;
+    height: 100%;
+    span{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        font-size: 8px;
+        background-color: #333;
+        border-radius: 50%;
+        color: #fff;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

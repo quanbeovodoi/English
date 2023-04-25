@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import GlobalStyle from '~/layouts/GlobalStyle';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { publicRoutes } from '~/routes';
+import DefaultLayout from './layouts/DefaultLayout';
+import { ShopContextProvider } from './context';
+import DefaultLayoutnoSidebar from './layouts/DefaultLayoutNoSidebar';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalStyle>
+      <ShopContextProvider>
+        <Router>
+          <div className="App">
+            <Routes>
+              {publicRoutes.map((route, index) => {
+                const Page = route.component;
+                let Layout = DefaultLayout
+                if(route.layout === 'unset'){
+                  Layout = DefaultLayoutnoSidebar
+                }
+                return (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={
+                      <Layout>
+                        <Page />
+                      </Layout>
+                    }
+                  />
+                );
+              })}
+            </Routes>
+          </div>
+        </Router>
+      </ShopContextProvider>
+    </GlobalStyle>
   );
 }
 
