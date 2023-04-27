@@ -22,7 +22,7 @@ const cx = classNames.bind(style);
 const bestPrds = ()=>{
   return data.products.filter(prd => prd.rate === 5)
 }
-console.log(bestPrds())
+// console.log(bestPrds())
 function Home() {
   return (
     <div>

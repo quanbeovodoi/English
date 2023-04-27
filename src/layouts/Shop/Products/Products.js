@@ -2,16 +2,22 @@ import Card from '~/components/Card';
 import style from './Products.module.scss';
 import classNames from 'classnames/bind';
 import data from '~/config/data';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '~/context';
 import SweetPagination from 'sweetpagination';
+
 import './pagination.scss';
+import CardLoading from '~/components/Card/Cardloading';
 const cx = classNames.bind(style);
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const dataPrds = data.products;
-function Products({dataPerPage = 10}) {
+function Products({ dataPerPage = 10 }) {
   const [currentPageData, setCurrentPageData] = useState(dataPrds);
+  const [loading, setLoading] = useState(true);
   const { addToCart } = useContext(ShopContext);
+  useEffect(()=>{
+    setTimeout(()=>setLoading(false),1000)
+  },[])
   return (
     <div>
       {/* <div className={cx('wrapper')}>
@@ -22,14 +28,18 @@ function Products({dataPerPage = 10}) {
         ))}
       </div> */}
       <div className={cx('wrapper')}>
-        {currentPageData.map((item,index) => (
+        {currentPageData.map((item, index) => (
           <div key={index} className={cx('item')}>
-          <Card data={item} onClick={() => addToCart(item.id)} />
-        </div>
+            {loading ? (
+              <CardLoading />
+            ) : (
+              <Card data={item} onClick={() => addToCart(item.id)} />
+            )}
+          </div>
         ))}
       </div>
       <div className={cx('pagination')}>
-      <SweetPagination
+        <SweetPagination
           currentPageData={setCurrentPageData}
           dataPerPage={dataPerPage}
           getData={dataPrds}

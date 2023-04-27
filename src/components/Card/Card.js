@@ -6,7 +6,7 @@ import Button from '../Button';
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(style);
 function Card({data,onClick}) {
-    return ( 
+    return (
     <div className={cx('card')}>
         <div>
             <Link to="/"><img className={cx('image')} src={data.urlImage}/></Link>
