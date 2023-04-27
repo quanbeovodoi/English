@@ -3,7 +3,7 @@ import Products from '~/layouts/Shop/Products';
 function Shops() {
   return (
     <>
-      <Products />
+      <Products dataPerPage={20}/>
     </>
   );
 }

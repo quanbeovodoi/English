@@ -38,14 +38,13 @@ export const ShopContextProvider = (props) => {
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => {
-      if (!prev[itemId]) {
-        prev[itemId] = 0;
-      }
-      return { ...prev, [itemId]: prev[itemId] + 1 };
+      let newCart = prev;
+      delete newCart[itemId]
+      return { ...newCart };
     });
   };
 
-  const updateCartItemCount = (newAmount, itemId) => {
+  const updateCartItemCount = (itemId,newAmount) => {
     setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
   };
 

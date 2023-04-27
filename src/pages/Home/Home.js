@@ -17,8 +17,12 @@ import {
   faTruck,
 } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
+import data from '~/config/data';
 const cx = classNames.bind(style);
-
+const bestPrds = ()=>{
+  return data.products.filter(prd => prd.rate === 5)
+}
+console.log(bestPrds())
 function Home() {
   return (
     <div>
@@ -45,7 +49,7 @@ function Home() {
           <SwiperSlide>
             <div className={cx('content')}>
               <div className={cx('text')}>
-                <h2 classNames={cx('title')}>Sales 70% Off</h2>
+                <h2 className={cx('title')}>Sales 70% Off</h2>
                 <Button className={cx('clicked')} primary>
                   SHOP NOW
                 </Button>
@@ -57,9 +61,9 @@ function Home() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-          <div className={cx('content')}>
+            <div className={cx('content')}>
               <div className={cx('text')}>
-                <h2 classNames={cx('title')}>More Products Free</h2>
+                <h2 className={cx('title')}>More Products Free</h2>
                 <Button className={cx('clicked')} primary>
                   SHOP NOW
                 </Button>
@@ -74,31 +78,37 @@ function Home() {
       </div>
       <div className={cx('cate')}>
         <div className={cx('box')}>
-          <div className={cx('title')}>
-            <h4 className={cx('text')}>Products Alebo</h4>
+          <div className={cx('container')}>
+            <div className={cx('title')}>
+              <h4 className={cx('text')}>Products Alebo</h4>
+            </div>
+            <img
+              className={cx('image')}
+              src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/inst04_640x640.jpg?v=1620125974"
+            />
           </div>
-          <img
-            className={cx('image')}
-            src="https://cdn.shopify.com/s/files/1/0031/6604/4224/products/SkinnyFitStretchMeshPolo_230x.jpg?v=1626292243"
-          />
         </div>
         <div className={cx('box')}>
-          <div className={cx('title')}>
-            <h4 className={cx('text')}>Products Alebo</h4>
+          <div className={cx('container')}>
+            <div className={cx('title')}>
+              <h4 className={cx('text')}>Products Alebo</h4>
+            </div>
+            <img
+              className={cx('image')}
+              src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/inst04_640x640.jpg?v=1620125974"
+            />
           </div>
-          <img
-            className={cx('image')}
-            src="https://cdn.shopify.com/s/files/1/0031/6604/4224/products/SkinnyFitStretchMeshPolo_230x.jpg?v=1626292243"
-          />
         </div>
         <div className={cx('box')}>
-          <div className={cx('title')}>
-            <h4 className={cx('text')}>Products Alebo</h4>
+          <div className={cx('container')}>
+            <div className={cx('title')}>
+              <h4 className={cx('text')}>Products Alebo</h4>
+            </div>
+            <img
+              className={cx('image')}
+              src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/inst04_640x640.jpg?v=1620125974"
+            />
           </div>
-          <img
-            className={cx('image')}
-            src="https://cdn.shopify.com/s/files/1/0031/6604/4224/products/SkinnyFitStretchMeshPolo_230x.jpg?v=1626292243"
-          />
         </div>
       </div>
       <div className={cx('products')}>

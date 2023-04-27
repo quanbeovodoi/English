@@ -8,9 +8,8 @@ import data from '~/config/data';
 const cx = classNames.bind(style);
 const dataPrds = data.products;
 function Cart() {
-  const { cartItems,getTotalCartAmount } = useContext(ShopContext);
+  const { cartItems,getTotalCartAmount,addToCart,removeFromCart,updateCartItemCount } = useContext(ShopContext);
   const cartItemCount = Object.entries(cartItems).length;
-  const { removeFromCart} = useContext(ShopContext);
   const prdInCart = ()=>{
     return Object.keys(cartItems).map((item,index)=>{
       const NewElement = data.products.find((prd)=>
@@ -23,7 +22,7 @@ function Cart() {
   console.log(prdInCart())
   const cartBox = (item,index)=> (<tr key={index}>
   <td>
-    <button className={cx('prdct-delete')}>
+    <button className={cx('prdct-delete')} onClick={()=>removeFromCart(item.id)}>
       <FontAwesomeIcon icon={faTrash} />
     </button>
   </td>
@@ -43,7 +42,7 @@ function Cart() {
   <td>${item.price}</td>
   <td>
     <div className={cx('prdct-qty-container')}>
-      <button className={cx('prdct-qty-btn')} type="button">
+      <button className={cx('prdct-qty-btn')} type="button" onClick={()=>updateCartItemCount(item.id,(item.quantity-1)?(item.quantity-1):1)}>
       <FontAwesomeIcon icon={faMinus} />
       </button>
       <input
@@ -51,9 +50,9 @@ function Cart() {
         name="qty"
         className={cx('qty-input-box')}
         disabled
-        defaultValue={item.quantity}
+        value={item.quantity}
       />
-      <button className={cx('prdct-qty-btn')} type="button">
+      <button className={cx('prdct-qty-btn')} type="button" onClick={()=>updateCartItemCount(item.id,item.quantity+1)}>
         <FontAwesomeIcon icon={faPlus} /> 
       </button>
     </div>
