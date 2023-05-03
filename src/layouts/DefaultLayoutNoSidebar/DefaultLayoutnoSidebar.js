@@ -6,8 +6,6 @@ function DefaultLayoutnoSidebar({ children }) {
     <>
       <Header />
       <div className="wrapper">
-        <div className='sidebar'>
-        </div>
         <div className='main'>{children}</div>
       </div>
       <Footer />

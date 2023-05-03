@@ -6,10 +6,11 @@ import Button from '../Button';
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(style);
 function Card({data,onClick}) {
+    const linkUrl = `/detail/${data.id}`
     return (
     <div className={cx('card')}>
         <div>
-            <Link to="/"><img className={cx('image')} src={data.urlImage}/></Link>
+            <Link to={linkUrl}><img className={cx('image')} src={data.urlImage}/></Link>
         </div>
         <div className={cx('event')}>
             <span className={cx('quickView')}><FontAwesomeIcon icon={faEye} /></span>
