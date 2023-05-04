@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import styles from './ListImgView.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 const cx = classNames.bind(styles);
@@ -20,6 +20,7 @@ function ListImgView({ data }) {
     backgroundPosition: '0% 0%'
   })
   
+  
   const handleMouseMove = e => {
     const { left, top, width, height } = e.target.getBoundingClientRect()
     const x = (e.clientX - left) / width * 100
@@ -30,6 +31,9 @@ function ListImgView({ data }) {
     else
     setState({ backgroundImage: `url(${imgData[imgCurrent]})`,backgroundPosition: `${x}% 100%` })
   }
+  
+  
+  
   return (
     <div className={cx('wrapper')}>
       <div className={cx('listImage')}>
@@ -57,8 +61,6 @@ function ListImgView({ data }) {
             </div>
           </SwiperSlide>
         })}
-          
-          
         </Swiper>
       </div>
       <div className={cx('singleImage')} onMouseMove={handleMouseMove} style={state}>

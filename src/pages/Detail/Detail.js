@@ -4,20 +4,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
 import { ShopContext } from '~/context';
-import { useContext, useState } from 'react';
+import { useContext, useLayoutEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ListImgView from '~/components/ListImgView';
 const cx = classNames.bind(styles);
 function Detail() {
+  const [top,setTop] = useState(0)
   const params = useParams();
-  console.log(params);
   const { addToCart } = useContext(ShopContext);
+  const [posImg,setPosImg] = useState({top: (window.scrollY - 120)>0?(window.scrollY - 120):0})
+  useLayoutEffect(()=>{
+    const handleScroll = ()=>{
+        if(window.scrollY<120)
+        setPosImg({top: 0});
+        else if(window.scrollY>=330)
+        setPosImg({top: 209});
+        else
+        setPosImg({top: window.scrollY - 120});
+    }
+    // if(window.scrollY>120 && window.scrollY<330)
+    window.addEventListener("scroll",handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  },[])
+  console.log(posImg)
   return (
     <>
       <div className={cx('wrapper')}>
         <div className={cx('inner')}>
           <div className={cx('item')}>
-            <div className={cx('stickprcol')}>
+            <div className={cx('stickprcol')} style={posImg}>
               <ListImgView />
             </div>
           </div>
