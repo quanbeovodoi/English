@@ -91,7 +91,7 @@ function Detail() {
             <div className={cx('row')}>
               <ul className={cx('add-info')}>
                 <li>
-                  <span itemprop="brand">Vendor:</span>{' '}
+                  <span itemProp="brand">Vendor:</span>{' '}
                   <Link to="/collections//Zara">zara</Link>
                 </li>
                 <li>
@@ -99,7 +99,7 @@ function Detail() {
                   <Link to="/collections//Polo">polo</Link>
                 </li>
                 <li>
-                  <span>Barcode:</span> <span class="barcode">123456789</span>
+                  <span>Barcode:</span> <span className={cx("barcode")}>123456789</span>
                 </li>
                 <li>
                   <span>Tags:</span>&nbsp;
