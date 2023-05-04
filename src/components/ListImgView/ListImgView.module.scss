@@ -8,6 +8,9 @@
 }
 .singleImage {
   width: 100%;
+  &:hover .image{
+    display: none;
+  }
 }
 .listImage {
   width: fit-content;

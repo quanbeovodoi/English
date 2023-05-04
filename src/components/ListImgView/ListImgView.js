@@ -16,16 +16,15 @@ function ListImgView({ data }) {
   ];
   const [imgCurrent, setImgCurrent] = useState(0);
   const[state,setState] = useState({
-    backgroundImage: `url()`,
+    backgroundImage: `url(${imgData[imgCurrent]})`,
     backgroundPosition: '0% 0%'
   })
   
   const handleMouseMove = e => {
     const { left, top, width, height } = e.target.getBoundingClientRect()
-    console.log(e.pageX)
     const x = (e.pageX - left) / width * 100
     const y = (e.pageY - top) / height * 100
-    setState({ backgroundImage: `url()`,backgroundPosition: `${x}% ${y}%` })
+    setState({ backgroundImage: `url(${imgData[imgCurrent]})`,backgroundPosition: `${x}% ${y}%` })
   }
   return (
     <div className={cx('wrapper')}>
@@ -50,7 +49,7 @@ function ListImgView({ data }) {
           
         </Swiper>
       </div>
-      <div className={cx('singleImage')}>
+      <div className={cx('singleImage')} onMouseMove={handleMouseMove} style={state}>
         <img
           className={cx('image')}
           src={
