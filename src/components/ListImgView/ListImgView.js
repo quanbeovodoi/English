@@ -22,8 +22,8 @@ function ListImgView({ data }) {
   
   const handleMouseMove = e => {
     const { left, top, width, height } = e.target.getBoundingClientRect()
-    const x = (e.pageX - left) / width * 100
-    const y = (e.pageY - top) / height * 100
+    const x = (e.clientX - left) / width * 100
+    const y = (e.clientY - top) / height * 100
     
     if(y<100)
     setState({ backgroundImage: `url(${imgData[imgCurrent]})`,backgroundPosition: `${x}% ${y}%` })
@@ -39,8 +39,15 @@ function ListImgView({ data }) {
           spaceBetween={5}
           className="mySwiper"
         >
-          {imgData.map((item,index)=><SwiperSlide key={index}>
-            <div className={cx('imageItem')} onClick={() => setImgCurrent(index)}>
+          {imgData.map((item,index)=>{
+            let imgClass;
+            if(index === imgCurrent){
+              imgClass = cx('imageItem','active')
+            }else{
+              imgClass = cx('imageItem')
+            }
+          return <SwiperSlide key={index}>
+            <div className={imgClass} onClick={() => setImgCurrent(index)}>
               <img
                 className={cx('image')}
                 src={
@@ -48,7 +55,8 @@ function ListImgView({ data }) {
                 }
               />
             </div>
-          </SwiperSlide>)}
+          </SwiperSlide>
+        })}
           
           
         </Swiper>
