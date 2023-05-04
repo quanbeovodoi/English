@@ -6,13 +6,13 @@ const cx = classNames.bind(styles);
 function ListImgView({ data }) {
   const imgData = [
     'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_4_2048x2048.jpg?v=1626292276',
-    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_5_300x.jpg?v=16262922760',
-    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_6_300x.jpg?v=1626292276',
-    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_7_300x.jpg?v=1626292276',
-    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_300x.jpg?v=1626292276',
-    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_1_300x.jpg?v=1626292276',
-    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_2_300x.jpg?v=1626292276',
-    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_3_300x.jpg?v=1626292276',
+    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_5_2048x2048.jpg?v=1626292276',
+    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_6_2048x2048.jpg?v=1626292276',
+    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_7_2048x2048.jpg?v=1626292276',
+    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_2048x2048.jpg?v=1626292276',
+    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_1_2048x2048.jpg?v=1626292276',
+    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_1_2048x2048.jpg?v=1626292276',
+    'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_3_2048x2048.jpg?v=1626292276',
   ];
   const [imgCurrent, setImgCurrent] = useState(0);
   const[state,setState] = useState({
