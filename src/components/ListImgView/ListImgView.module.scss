@@ -8,6 +8,8 @@
 }
 .singleImage {
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: 400%;
   &:hover .image{
     display: none;
   }

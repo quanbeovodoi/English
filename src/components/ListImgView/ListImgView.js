@@ -24,7 +24,11 @@ function ListImgView({ data }) {
     const { left, top, width, height } = e.target.getBoundingClientRect()
     const x = (e.pageX - left) / width * 100
     const y = (e.pageY - top) / height * 100
+    
+    if(y<100)
     setState({ backgroundImage: `url(${imgData[imgCurrent]})`,backgroundPosition: `${x}% ${y}%` })
+    else
+    setState({ backgroundImage: `url(${imgData[imgCurrent]})`,backgroundPosition: `${x}% 100%` })
   }
   return (
     <div className={cx('wrapper')}>
