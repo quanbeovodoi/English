@@ -4,34 +4,38 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
 import { ShopContext } from '~/context';
-import { useContext, useLayoutEffect, useState } from 'react';
+import { useContext, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ListImgView from '~/components/ListImgView';
 const cx = classNames.bind(styles);
 function Detail() {
-  const [top,setTop] = useState(0)
   const params = useParams();
   const { addToCart } = useContext(ShopContext);
-  const [posImg,setPosImg] = useState({top: (window.scrollY - 120)>0?(window.scrollY - 120):0})
+  const [posImg,setPosImg] = useState({top: (window.scrollY - 120)>0?(window.scrollY - 120):0});
+  const containRef = useRef()
+  const innerRef = useRef()
   useLayoutEffect(()=>{
+   const containeRefBound=containRef.current.getBoundingClientRect()
+   const innerRefBound = innerRef.current.getBoundingClientRect();
+   console.log(containeRefBound)
     const handleScroll = ()=>{
-        if(window.scrollY<120)
+        if(window.scrollY<containeRefBound.top)
         setPosImg({top: 0});
-        else if(window.scrollY>=330)
-        setPosImg({top: 209});
+        else if(window.scrollY>=containeRefBound.bottom - innerRefBound .bottom + containeRefBound.top)
+        setPosImg({top: containeRefBound.bottom - innerRefBound.bottom});
         else
-        setPosImg({top: window.scrollY - 120});
+        setPosImg({top: window.scrollY - containeRefBound.top});
     }
     // if(window.scrollY>120 && window.scrollY<330)
     window.addEventListener("scroll",handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   },[])
-  console.log(posImg)
+  // console.log(posImg)
   return (
     <>
       <div className={cx('wrapper')}>
-        <div className={cx('inner')}>
-          <div className={cx('item')}>
+        <div className={cx('inner')} ref={containRef}>
+          <div className={cx('item')}  ref={innerRef}>
             <div className={cx('stickprcol')} style={posImg}>
               <ListImgView />
             </div>
