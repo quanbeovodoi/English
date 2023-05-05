@@ -19,8 +19,6 @@ function ListImgView({ data }) {
     backgroundImage: `url(${imgData[imgCurrent]})`,
     backgroundPosition: '0% 0%'
   })
-  
-  
   const handleMouseMove = e => {
     const { left, top, width, height } = e.target.getBoundingClientRect()
     const x = (e.clientX - left) / width * 100
@@ -31,9 +29,7 @@ function ListImgView({ data }) {
     else
     setState({ backgroundImage: `url(${imgData[imgCurrent]})`,backgroundPosition: `${x}% 100%` })
   }
-  
-  
-  
+
   return (
     <div className={cx('wrapper')}>
       <div className={cx('listImage')}>
