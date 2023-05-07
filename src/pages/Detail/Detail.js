@@ -11,26 +11,27 @@ const cx = classNames.bind(styles);
 function Detail() {
   const params = useParams();
   const { addToCart } = useContext(ShopContext);
-  const [posImg,setPosImg] = useState({top: 0});
+  const [posImg,setPosImg] = useState({top: window.pageYOffset});
   const containRef = useRef()
   const innerRef = useRef()
+  
   useLayoutEffect(()=>{
-   const containeRefBound=containRef.current.getBoundingClientRect();
-   const innerRefBound = innerRef.current.getBoundingClientRect();
+    
     const handleScroll = ()=>{
-      
-        if(window.scrollY<containeRefBound.top){
+        if(window.pageYOffset <127){
           setPosImg({top: 0});
         }
-        else if(window.scrollY>=containRef.current.clientHeight - innerRef.current.clientHeight + containeRefBound.top){
-
+        else if(window.pageYOffset>=containRef.current.clientHeight - innerRef.current.clientHeight + 127){
+          // console.log(containRef.current.clientHeight - innerRef.current.clientHeight + containeRefBound.top)
+          // console.log('containeRefBound',containeRefBound.top,'dk: window.pageYOffset>=',containRef.current.clientHeight - innerRef.current.clientHeight + 127,'window.pageYOffset',window.pageYOffset)
           setPosImg({top: containRef.current.clientHeight - innerRef.current.clientHeight});
         }
         else{
-          setPosImg({top: window.scrollY - containeRefBound.top});
+          // console.log(window.pageYOffset)
+          setPosImg({top: window.pageYOffset - 127});
         }
     }
-    window.addEventListener("scroll",handleScroll)
+    window.addEventListener('scroll',handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   },[])
   return (
