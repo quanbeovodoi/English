@@ -14,31 +14,31 @@ function Detail() {
   const [posImg,setPosImg] = useState({top: 0});
   const containRef = useRef()
   const innerRef = useRef()
-  const stickPrcol = useRef()
-  // useLayoutEffect(()=>{
-  //  const containeRefBound=containRef.current.getBoundingClientRect();
-  //  const innerRefBound = innerRef.current.getBoundingClientRect();
-  //  const stickPrcolBound = stickPrcol.current.offsetTop;
-  //  console.log(containeRefBound)
-  //   const handleScroll = ()=>{
-  //     console.log(stickPrcolBound)
-  //       if(window.scrollY<containeRefBound.top)
-  //       setPosImg({top: 0});
-  //       else if(window.scrollY>=containeRefBound.bottom - innerRefBound.bottom + containeRefBound.top)
-  //       setPosImg({top: containeRefBound.bottom - innerRefBound.bottom});
-  //       else
-  //       setPosImg({top: window.scrollY - containeRefBound.top});
-  //   }
-  //   window.addEventListener("scroll",handleScroll)
-  //   return () => window.removeEventListener('scroll', handleScroll)
-  // },[])
-  // console.log(posImg)
+  useLayoutEffect(()=>{
+   const containeRefBound=containRef.current.getBoundingClientRect();
+   const innerRefBound = innerRef.current.getBoundingClientRect();
+    const handleScroll = ()=>{
+      
+        if(window.scrollY<containeRefBound.top){
+          setPosImg({top: 0});
+        }
+        else if(window.scrollY>=containRef.current.clientHeight - innerRef.current.clientHeight + containeRefBound.top){
+
+          setPosImg({top: containRef.current.clientHeight - innerRef.current.clientHeight});
+        }
+        else{
+          setPosImg({top: window.scrollY - containeRefBound.top});
+        }
+    }
+    window.addEventListener("scroll",handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  },[])
   return (
     <>
       <div className={cx('wrapper')}>
         <div className={cx('inner')} ref={containRef}>
           <div className={cx('item')}  ref={innerRef}>
-            <div className={cx('stickprcol')} ref={stickPrcol} style={posImg}>
+            <div className={cx('stickprcol')} style={posImg}>
               <ListImgView />
             </div>
           </div>
