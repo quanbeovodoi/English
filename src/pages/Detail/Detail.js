@@ -20,7 +20,6 @@ function Detail() {
           setPosImg({top: 0});
         }
         else if(window.pageYOffset>=containRef.current.clientHeight - innerRef.current.clientHeight + containRef.current.offsetTop){
-          console.log('haha')
           setPosImg({top: containRef.current.clientHeight - innerRef.current.clientHeight});
         }
         else{
