@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 function Detail() {
   const params = useParams();
   const { addToCart } = useContext(ShopContext);
-  const [posImg,setPosImg] = useState({top: window.pageYOffset});
+  const [posImg,setPosImg] = useState({top: 0});
   const containRef = useRef()
   const innerRef = useRef()
   useLayoutEffect(()=>{
@@ -20,6 +20,7 @@ function Detail() {
           setPosImg({top: 0});
         }
         else if(window.pageYOffset>=containRef.current.clientHeight - innerRef.current.clientHeight + containRef.current.offsetTop){
+          console.log('haha')
           setPosImg({top: containRef.current.clientHeight - innerRef.current.clientHeight});
         }
         else{

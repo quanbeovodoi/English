@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import styles from './ListImgView.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 const cx = classNames.bind(styles);
@@ -15,10 +15,15 @@ function ListImgView({ data }) {
     'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/TailoredFitMesh-PanelPolo_3_2048x2048.jpg?v=1626292276',
   ];
   const [imgCurrent, setImgCurrent] = useState(0);
+  const singleImage = useRef();
   const[state,setState] = useState({
     backgroundImage: `url(${imgData[imgCurrent]})`,
     backgroundPosition: '0% 0%'
   })
+  const handleZoom = (e)=>{
+    console.log('zoom')
+    
+  }
   const handleMouseMove = e => {
     const { left, top, width, height } = e.target.getBoundingClientRect()
     const x = (e.clientX - left) / width * 100
@@ -29,7 +34,8 @@ function ListImgView({ data }) {
     else
     setState({ backgroundImage: `url(${imgData[imgCurrent]})`,backgroundPosition: `${x}% 100%` })
   }
-
+  useLayoutEffect(()=>{
+  },[])
   return (
     <div className={cx('wrapper')}>
       <div className={cx('listImage')}>
@@ -59,7 +65,7 @@ function ListImgView({ data }) {
         })}
         </Swiper>
       </div>
-      <div className={cx('singleImage')} onMouseMove={handleMouseMove} style={state}>
+      <div className={cx('singleImage')} onMouseMove={handleMouseMove} onWheel={handleZoom} style={state} ref={singleImage}>
         <img
           className={cx('image')}
           src={
