@@ -14,21 +14,16 @@ function Detail() {
   const [posImg,setPosImg] = useState({top: window.pageYOffset});
   const containRef = useRef()
   const innerRef = useRef()
-  
   useLayoutEffect(()=>{
-    
     const handleScroll = ()=>{
-        if(window.pageYOffset <127){
+        if(window.pageYOffset <containRef.current.offsetTop){
           setPosImg({top: 0});
         }
-        else if(window.pageYOffset>=containRef.current.clientHeight - innerRef.current.clientHeight + 127){
-          // console.log(containRef.current.clientHeight - innerRef.current.clientHeight + containeRefBound.top)
-          // console.log('containeRefBound',containeRefBound.top,'dk: window.pageYOffset>=',containRef.current.clientHeight - innerRef.current.clientHeight + 127,'window.pageYOffset',window.pageYOffset)
+        else if(window.pageYOffset>=containRef.current.clientHeight - innerRef.current.clientHeight + containRef.current.offsetTop){
           setPosImg({top: containRef.current.clientHeight - innerRef.current.clientHeight});
         }
         else{
-          // console.log(window.pageYOffset)
-          setPosImg({top: window.pageYOffset - 127});
+          setPosImg({top: window.pageYOffset - containRef.current.offsetTop});
         }
     }
     window.addEventListener('scroll',handleScroll)
