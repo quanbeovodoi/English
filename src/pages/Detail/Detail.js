@@ -1,39 +1,81 @@
 import classNames from 'classnames/bind';
 import styles from './Detail.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faStarHalf, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
 import { ShopContext } from '~/context';
-import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ListImgView from '~/components/ListImgView';
+import IncreaseButton from '~/components/IncreaseButton';
+import data from '~/config/data';
 const cx = classNames.bind(styles);
 function Detail() {
   const params = useParams();
-  const { addToCart } = useContext(ShopContext);
-  const [posImg,setPosImg] = useState({top: 0});
-  const containRef = useRef()
-  const innerRef = useRef()
-  useLayoutEffect(()=>{
-    const handleScroll = ()=>{
-        if(window.pageYOffset <containRef.current.offsetTop){
-          setPosImg({top: 0});
-        }
-        else if(window.pageYOffset>=containRef.current.clientHeight - innerRef.current.clientHeight + containRef.current.offsetTop){
-          setPosImg({top: containRef.current.clientHeight - innerRef.current.clientHeight});
-        }
-        else{
-          setPosImg({top: window.pageYOffset - containRef.current.offsetTop});
-        }
+  const { cartItems,addToCart, updateCartItemCount } = useContext(ShopContext);
+  const [posImg, setPosImg] = useState({ top: 0 });
+  const [qty,setQty]= useState(cartItems[params.detailId]?cartItems[params.detailId]:1)
+  const containRef = useRef();
+  const innerRef = useRef();
+  const dataPrds = (()=>{
+    return  data.products.find((prd)=>
+        Number(prd.id) === Number(params.detailId)
+      )
+  })();
+  const rateNumber = (rate=0) => {
+    const arr = [];
+    for(let i = 0;i<5;i++){
+      if(i<rate-1)
+      {
+        arr.push(<FontAwesomeIcon key={i} icon={faStar} className={cx('star', 'active')} />)
+      }
+      else{
+        if(rate-1===i-0.5)
+        arr.push(<FontAwesomeIcon key={i} icon={faStarHalfStroke} className={cx('star', 'active')} />)
+        else
+        arr.push(<FontAwesomeIcon key={i} icon={faStar} className={cx('star')} />)
+      }
+      
     }
-    window.addEventListener('scroll',handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    return arr
+  }
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
   },[])
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset < containRef.current.offsetTop) {
+        setPosImg({ top: 0 });
+      } else if (
+        window.pageYOffset >=
+        containRef.current.clientHeight -
+          innerRef.current.clientHeight +
+          containRef.current.offsetTop
+      ) {
+        setPosImg({
+          top: containRef.current.clientHeight - innerRef.current.clientHeight,
+        });
+      } else {
+        setPosImg({ top: window.pageYOffset - containRef.current.offsetTop });
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <>
       <div className={cx('wrapper')}>
         <div className={cx('inner')} ref={containRef}>
-          <div className={cx('item')}  ref={innerRef}>
+          <div className={cx('item')} ref={innerRef}>
             <div className={cx('stickprcol')} style={posImg}>
               <ListImgView />
             </div>
@@ -47,15 +89,15 @@ function Detail() {
               </div>
             </div>
             <h6 className={cx('sm-title')}>BRAND</h6>
-            <h1 className={cx('title')}>COLLEGE ESSENTIALS</h1>
+            <h1 className={cx('title')}>{dataPrds.title}</h1>
             <div className={cx('price')}>
               <span className={cx('sale-price')}>
                 <span
                   className={cx('money')}
-                  data-currency-usd="$400.00"
+                  data-currency-usd={`$${dataPrds.price}`}
                   data-currency="USD"
                 >
-                  $400.00
+                  ${dataPrds.price}
                 </span>
               </span>
               <span className={cx('old-price')}>
@@ -69,11 +111,7 @@ function Detail() {
               </span>
             </div>
             <div className={cx('rating')}>
-              <FontAwesomeIcon icon={faStar} className={cx('star', 'active')} />
-              <FontAwesomeIcon icon={faStar} className={cx('star')} />
-              <FontAwesomeIcon icon={faStar} className={cx('star')} />
-              <FontAwesomeIcon icon={faStar} className={cx('star')} />
-              <FontAwesomeIcon icon={faStar} className={cx('star')} />
+              {rateNumber(dataPrds.rate)}
             </div>
             <div className={cx('color')}>
               COLOR: <span className={cx('current_option_name')}>Blue</span>
@@ -96,31 +134,41 @@ function Detail() {
                 </li>
               </ul>
             </div>
-            <div className={cx('row')}>
-              <Button
-                primary
-                className={cx('add')}
-                onClick={() => addToCart(params.detailId)}
-              >
-                Add To Cart
-              </Button>
+            <div className={cx('row', 'flex')}>
+              <div className={cx('px-5')}>
+                <IncreaseButton quantityCurrent={qty} increaseFunc={()=>setQty(prev => (prev - 1)>0?(prev - 1):1)} discreaseFunc={()=>setQty(prev => prev + 1)}/>
+              </div>
+              <div className={cx('px-5')}>
+                <Button
+                  primary
+                  className={cx('add')}
+                  onClick={() => {
+                    addToCart(params.detailId)
+                    updateCartItemCount(params.detailId,qty)
+                  }}
+                >
+                  Add To Cart
+                </Button>
+              </div>
             </div>
             <div className={cx('row')}>
               <ul className={cx('add-info')}>
                 <li>
                   <span itemProp="brand">Vendor:</span>{' '}
-                  <Link to="/collections//Zara">zara</Link>
+                  <Link to="/collections/Zara">zara</Link>
                 </li>
                 <li>
                   <span>Product Type:</span>{' '}
-                  <Link to="/collections//Polo">polo</Link>
+                  <Link to="/collections/Polo">polo</Link>
                 </li>
                 <li>
-                  <span>Barcode:</span> <span className={cx("barcode")}>123456789</span>
+                  <span>Barcode:</span>{' '}
+                  <span className={cx('barcode')}>123456789</span>
                 </li>
                 <li>
                   <span>Tags:</span>&nbsp;
-                  <Link to="/collections/all/sunglasses">Sunglasses</Link>,&nbsp;
+                  <Link to="/collections/all/sunglasses">Sunglasses</Link>
+                  ,&nbsp;
                   <Link to="/collections/all/winter">Winter</Link>,&nbsp;
                   <Link to="/collections/all/shorts">Shorts</Link>,&nbsp;
                   <Link to="/collections/all/cool">Cool</Link>,&nbsp;
@@ -162,7 +210,6 @@ function Detail() {
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const publicRoutes = [
   { path: config.routes.aboutUs, component: AboutUs,layout:'unset'},
   { path: config.routes.quiz, component: Quiz },
   { path: config.routes.cart, component: Cart },
-  { path: config.routes.detailProduct, component: Detail },
+  { path: config.routes.detailProduct, component: Detail ,layout:'unset'},
   { path: config.routes.test, component: Test },
 ];
 

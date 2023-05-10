@@ -2,7 +2,7 @@
   padding-top: 40px;
   width: 100%;
   height: 100%;
-  max-width: 982px;
+  max-width: 1024px;
   margin: 0 auto;
   .inner {
     display: flex;
@@ -85,9 +85,7 @@
 .row{
   margin-top: 24px;
 }
-.add{
-  width: 100%;
-}
+
 .des{
   .desHead{
     font-weight: 800;
@@ -106,3 +104,13 @@ ul.add-info{
   position: relative;
 }
 
+.flex{
+  display: flex;
+}
+.px-5{
+  padding: 5px;
+  width: 100%;
+}
+.add{
+  width: 100%;
+}

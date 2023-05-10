@@ -5,6 +5,7 @@ import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { ShopContext } from '~/context';
 import data from '~/config/data';
+import IncreaseButton from '~/components/IncreaseButton';
 const cx = classNames.bind(style);
 const dataPrds = data.products;
 function Cart() {
@@ -41,21 +42,7 @@ function Cart() {
   </td>
   <td>${item.price}</td>
   <td>
-    <div className={cx('prdct-qty-container')}>
-      <button className={cx('prdct-qty-btn')} type="button" onClick={()=>updateCartItemCount(item.id,(item.quantity-1)?(item.quantity-1):1)}>
-      <FontAwesomeIcon icon={faMinus} />
-      </button>
-      <input
-        type="text"
-        name="qty"
-        className={cx('qty-input-box')}
-        disabled
-        value={item.quantity}
-      />
-      <button className={cx('prdct-qty-btn')} type="button" onClick={()=>updateCartItemCount(item.id,item.quantity+1)}>
-        <FontAwesomeIcon icon={faPlus} /> 
-      </button>
-    </div>
+    <IncreaseButton quantityCurrent = {item.quantity} increaseFunc = {()=>updateCartItemCount(item.id,(item.quantity-1)?(item.quantity-1):1)} discreaseFunc = {()=>updateCartItemCount(item.id,item.quantity+1)}/>
   </td>
   <td className={cx('text-right')}>${item.price * item.quantity}</td>
 </tr>)

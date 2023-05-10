@@ -9,8 +9,8 @@
 }
 .singleImage {
   width: 100%;
-  background-repeat: no-repeat;
   background-size: 400%;
+  background-repeat: no-repeat;
   cursor: crosshair;
   &:hover .image{
     opacity: 0;
@@ -19,7 +19,7 @@
 .listImage {
   width: fit-content;
   flex: 0 0 20%;
-  height: 700px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   width: 400px;
