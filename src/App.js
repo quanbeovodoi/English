@@ -4,7 +4,13 @@ import { publicRoutes } from '~/routes';
 import DefaultLayout from './layouts/DefaultLayout';
 import { ShopContextProvider } from './context';
 import DefaultLayoutnoSidebar from './layouts/DefaultLayoutNoSidebar';
+import { useEffect } from 'react';
 function App() {
+  useEffect(()=>{
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
+  })
   return (
     <GlobalStyle>
       <ShopContextProvider>

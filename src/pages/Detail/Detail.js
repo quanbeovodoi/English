@@ -15,6 +15,7 @@ import { Link, useParams } from 'react-router-dom';
 import ListImgView from '~/components/ListImgView';
 import IncreaseButton from '~/components/IncreaseButton';
 import data from '~/config/data';
+import Products from '~/layouts/Shop/Products';
 const cx = classNames.bind(styles);
 function Detail() {
   const params = useParams();
@@ -47,9 +48,6 @@ function Detail() {
   }
   useEffect(()=>{
     window.scrollTo(0, 0);
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    }
   },[])
   useEffect(() => {
     const handleScroll = () => {
@@ -135,7 +133,7 @@ function Detail() {
               </ul>
             </div>
             <div className={cx('row', 'flex')}>
-              <div className={cx('px-5')}>
+              <div className={cx('px-5','flex')}>
                 <IncreaseButton quantityCurrent={qty} increaseFunc={()=>setQty(prev => (prev - 1)>0?(prev - 1):1)} discreaseFunc={()=>setQty(prev => prev + 1)}/>
               </div>
               <div className={cx('px-5')}>
@@ -211,6 +209,12 @@ function Detail() {
               </div>
             </div>
           </div>
+        </div>
+        <div className={cx('inner')}>
+        <div className={cx('row')}>
+          <h4 className={cx('title')}>RELATED PRODUCTS</h4>
+          <Products dataPerPage={15} isSlide />
+        </div>
         </div>
       </div>
     </>

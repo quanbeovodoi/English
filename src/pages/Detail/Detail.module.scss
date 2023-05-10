@@ -5,6 +5,7 @@
   max-width: 1024px;
   margin: 0 auto;
   .inner {
+    margin-top: 15px;
     display: flex;
     justify-content: flex-start;
     .sm-title {
@@ -113,4 +114,14 @@ ul.add-info{
 }
 .add{
   width: 100%;
+}
+.title{
+  color: var(--primary);
+}
+h4.title{
+  text-align: center;
+  font-size: 2rem;
+  padding: 15px;
+  border-bottom: 1px solid var(--primary);
+  margin-bottom: 15px;
 }

@@ -20,7 +20,6 @@ function Cart() {
       return NewElement
     })
   };
-  // console.log(prdInCart())
   const cartBox = (item,index)=> (<tr key={index}>
   <td>
     <button className={cx('prdct-delete')} onClick={()=>removeFromCart(item.id)}>
