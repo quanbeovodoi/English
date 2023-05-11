@@ -21,6 +21,34 @@
   padding: 20px;
 }
 .container{
+  position: relative;
   max-width: 960px;
 }
 
+.navigation{
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .item{
+    margin: 0 -30px;
+    cursor: pointer;
+    background-color: transparent;
+	  border: 1px solid #d4b5a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    color:#333;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      background-color: var(--primary);
+      color: #fff;
+    }
+  }
+}

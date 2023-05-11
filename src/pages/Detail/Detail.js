@@ -34,13 +34,13 @@ function Detail() {
     for(let i = 0;i<5;i++){
       if(i<rate-1)
       {
-        arr.push(<FontAwesomeIcon key={i} icon={faStar} className={cx('star', 'active')} />)
+        arr.push(<FontAwesomeIcon key={`star${i}`} icon={faStar} className={cx('star', 'active')} />)
       }
       else{
         if(rate-1===i-0.5)
-        arr.push(<FontAwesomeIcon key={i} icon={faStarHalfStroke} className={cx('star', 'active')} />)
+        arr.push(<FontAwesomeIcon key={`star${i}`} icon={faStarHalfStroke} className={cx('star', 'active')} />)
         else
-        arr.push(<FontAwesomeIcon key={i} icon={faStar} className={cx('star')} />)
+        arr.push(<FontAwesomeIcon key={`star${i}`} icon={faStar} className={cx('star')} />)
       }
       
     }

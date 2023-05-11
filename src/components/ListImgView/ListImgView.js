@@ -94,7 +94,7 @@ function ListImgView({ data }) {
               imgClass = cx('imageItem');
             }
             return (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={`sw_${index}`}>
                 <div className={imgClass} onClick={() => {resetZoom();setImgCurrent(index)}}>
                   <img className={cx('image')} src={item} />
                 </div>
