@@ -80,7 +80,7 @@ function Home() {
         <div className={cx('box')}>
           <div className={cx('container')}>
             <div className={cx('title')}>
-              <h4 className={cx('text')}>Products Alebo</h4>
+              <h4 className={cx('text')}>Shoes</h4>
             </div>
             <img
               className={cx('image')}
@@ -91,7 +91,7 @@ function Home() {
         <div className={cx('box')}>
           <div className={cx('container')}>
             <div className={cx('title')}>
-              <h4 className={cx('text')}>Products Alebo</h4>
+              <h4 className={cx('text')}>Women</h4>
             </div>
             <img
               className={cx('image')}
@@ -102,7 +102,7 @@ function Home() {
         <div className={cx('box')}>
           <div className={cx('container')}>
             <div className={cx('title')}>
-              <h4 className={cx('text')}>Products Alebo</h4>
+              <h4 className={cx('text')}>Man</h4>
             </div>
             <img
               className={cx('image')}
@@ -113,7 +113,7 @@ function Home() {
       </div>
       <div className={cx('products')}>
         <h2 className={cx('title')}>BEST PRODUCTS</h2>
-        <Products />
+        <Products dataPerPage={8}/>
       </div>
       <div className={cx('shipping')}>
         <div className={cx('box')}>

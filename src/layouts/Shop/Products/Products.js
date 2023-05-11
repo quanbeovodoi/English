@@ -2,7 +2,7 @@ import Card from '~/components/Card';
 import style from './Products.module.scss';
 import classNames from 'classnames/bind';
 import data from '~/config/data';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { ShopContext } from '~/context';
 import SweetPagination from 'sweetpagination';
 
@@ -14,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Navigation } from 'swiper';
 const cx = classNames.bind(style);
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const dataPrds = data.products;
@@ -21,19 +22,33 @@ function Products({ dataPerPage = 10, isSlide = false }) {
   const [currentPageData, setCurrentPageData] = useState(dataPrds);
   const [loading, setLoading] = useState(true);
   const { addToCart } = useContext(ShopContext);
+  const navigationPrevRef = useRef();
+    const navigationNextRef = useRef();
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
   if (isSlide) {
+    
     return (
       <>
         <div className={cx('container')}>
+          <div className={cx('navigation')}>
+            <div className={cx('item','next')} ref={navigationNextRef}>next</div>
+            <div className={cx('item','prev')} ref={navigationPrevRef}>prev</div>
+          </div>
           <Swiper
-            modules={[]}
+            modules={[Navigation]}
+            navigation = {
+              {prevEl: navigationPrevRef.current,
+              nextEl: navigationNextRef.current,}}
             spaceBetween={10}
             slidesPerView={4}
             onSwiper={(swiper) => {}}
             onSlideChange={() => {}}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = navigationPrevRef.current;
+              swiper.params.navigation.nextEl = navigationNextRef.current;
+         }}
             speed={1000}
           >
             {currentPageData.map((item, index) => (

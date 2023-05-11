@@ -11,7 +11,7 @@ import Shops from '~/pages/Shops';
 const publicRoutes = [
   { path: config.routes.home, component: Home ,layout:'unset'},
   { path: config.routes.profile, component: Profile,layout:'unset'},
-  { path: config.routes.shop, component: Shops },
+  { path: config.routes.shop, component: Shops ,layout:'unset'},
   { path: config.routes.aboutUs, component: AboutUs,layout:'unset'},
   { path: config.routes.quiz, component: Quiz },
   { path: config.routes.cart, component: Cart },
