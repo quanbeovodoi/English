@@ -32,6 +32,13 @@
   padding: 0 10px;
  
 }
+.container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
 .top-heading{
     font-size: 1.4rem;
     display: inline-flex;
@@ -58,6 +65,9 @@
         .item{
             display: block;
             padding: 0 10px;
+            span{
+              padding-right: 10px;
+            }
         }
         .icon{
             padding: 0 20px;
