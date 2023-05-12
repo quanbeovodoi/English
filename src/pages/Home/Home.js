@@ -49,7 +49,8 @@ function Home() {
           <SwiperSlide>
             <div className={cx('content')}>
               <div className={cx('text')}>
-                <h2 className={cx('title')}>Sales 70% Off</h2>
+                <h2 className={cx('title')}>Up to 70% Off shorts and swim</h2>
+                <p className={cx('content')}>The weather started getting rough the tiny ship was tossed. If not for the courage of the fearless crew the Minnow would be lost. our dreams come true for me and you.</p>
                 <Button className={cx('clicked')} primary>
                   SHOP NOW
                 </Button>
@@ -63,7 +64,8 @@ function Home() {
           <SwiperSlide>
             <div className={cx('content')}>
               <div className={cx('text')}>
-                <h2 className={cx('title')}>More Products Free</h2>
+                <h2 className={cx('title')}>new way to purchase your products</h2>
+                <p className={cx('content')}>The weather started getting rough the tiny ship was tossed. If not for the courage of the fearless crew the Minnow would be lost. our dreams come true for me and you.</p>
                 <Button className={cx('clicked')} primary>
                   SHOP NOW
                 </Button>

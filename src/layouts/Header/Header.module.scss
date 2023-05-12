@@ -1,28 +1,76 @@
-.image{
+.image {
+  display: flex;
+  .title {
+    span{
+        color: var(--primary);
+    }
     display: flex;
-    .title{
+    height: 100%;
+    font-family: 'Crimson Text', serif;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    font-size: 3rem;
+  }
+}
+.image img {
+  width: 5rem;
+  object-fit: contain;
+}
+.wrapper {
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  // box-shadow: rgba(39, 39, 39, 0.348) 0px 2px 8px;
+  justify-content: space-between;
+  
+  background-color: #ffff;
+  padding: 0 10px;
+ 
+}
+.top-heading{
+    font-size: 1.4rem;
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    align-items: center;
+    line-height: 60px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    h5 {
+        font-size: inherit;
+        font-weight: 500;
+        color: #333;
+        display: inline-block;
+        margin: 0;
+        line-height: 28px;
+        letter-spacing: 0.28px;
+        padding-right: 30px;
+        text-transform: capitalize;
+      }
+    .navbar-links{
         display: flex;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-        letter-spacing: 5px;
-        font-weight: 600;
-        font-size: 3rem;
+        .item{
+            display: block;
+            padding: 0 10px;
+        }
+        .icon{
+            padding: 0 20px;
+            position: relative;
+            &::before{
+                background-color: #cdcdcd;
+                content: "";
+                height: 60px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1px;
+            }
+        }
     }
 }
-.image img{
-    width: 5rem;
-    object-fit: contain;
-}
-.wrapper{
-    position: relative;
-    z-index: 999;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    box-shadow: rgba(39, 39, 39, 0.348) 0px 2px 8px;
-    justify-content: space-between;
-    background-color: #ffff;
-}
-

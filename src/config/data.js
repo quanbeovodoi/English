@@ -122,9 +122,12 @@ const data = {
   ],
   menuHeading: [
     { id: 1, title: 'Home', url: '/' },
-    { id: 2, title: 'Shopping', url: '/shop' },
-    { id: 3, title: 'About Us', url: '/about_us' },
-    { id: 4, title: 'Profile', url: '/Profile' },
+    { id: 2, title: 'Shop', url: '/shop' },
+    { id: 3, title: 'Products', url: '/products' },
+    { id: 4, title: 'Blog', url: '/blog' },
+    { id: 5, title: 'About Us', url: '/about_us' },
+    { id: 6, title: 'Contact Us', url: '/contact_us' },
+    { id: 7, title: 'Profile', url: '/Profile' },
   ],
   sideBarMenu: [
     { id: 1, title: 'Brand', url: '/' },

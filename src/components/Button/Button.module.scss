@@ -29,7 +29,7 @@
   &:hover {
     border-color: var(--primary);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
-      #fe2c55;
+    #d38d6e;
   }
 }
 
@@ -69,13 +69,13 @@
     color: rgb(59, 59, 59);
     transition: all 0.2s ease-in-out;
     &:hover{
-      color: #e12b4f;
+      color: var(--primary);
     }
   }
   a.active{
-    color: #e12b4f;
+    color: var(--primary);
     &:before {
-      color: #e12b4f;
+      color: var(--primary);
       content: attr(data-hover);
       position: absolute;
       transition: transform 0.3s, opacity 0.5s;
