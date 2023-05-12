@@ -1,6 +1,6 @@
 .menu{
     display: flex;
-    @media only screen and (max-width: 960px) {
+    @media only screen and (max-width: 1090px) {
         display: none;
     }
     .item{
@@ -19,7 +19,7 @@
     position: relative;
     display: none;
     text-align: center;
-    @media only screen and (max-width: 960px) {
+    @media only screen and (max-width: 1090px) {
         display: flex;
     }
     .iconHumberger{
@@ -27,8 +27,9 @@
     }
     .menu-humberger{
         position: absolute;
+        width: 300px;
         z-index: 9999;
-        top: 50px;
+        top: 50PX;
         right: 0;
         color: #000;
         background-color: #fff;
