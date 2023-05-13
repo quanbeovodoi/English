@@ -2,121 +2,121 @@ const data = {
   products: [
     {
       id: 1,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'stylish chair',
       price: '400.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-1.jpg',
       rate: 4.5,
     },
     {
       id: 2,
-      title: 'Viscose-Cashmere Scarf',
+      title: 'men\'s casual shoes',
       price: '200.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-2.jpg',
       rate: 5,
     },
     {
       id: 3,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'sun glass',
       price: '400.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-3.jpg',
       rate: 4.5,
     },
     {
       id: 4,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'tourist bags',
       price: '400.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-4.jpg',
       rate: 4.5,
     },
     {
       id: 5,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'mobilephone',
       price: '400.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-5.jpg',
       rate: 4.5,
     },
     {
       id: 6,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'stylish head',
       price: '400.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-8.jpg',
       rate: 4.5,
     },
     {
       id: 7,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'sun glass',
       price: '100.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-3.jpg',
       rate: 2.5,
     },
     {
       id: 8,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'men\'s casual shoes',
       price: '40.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-2.jpg',
       rate: 4.5,
     },
     {
       id: 9,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'example product',
       price: '420.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-4.jpg',
       rate: 4.5,
     },
     {
       id: 10,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'example product',
       price: '50.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-5.jpg',
       rate: 4.5,
     },
     {
       id: 11,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'example product',
       price: '50.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-8.jpg',
       rate: 4.5,
     },
     {
       id: 12,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'example product',
       price: '400.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-2.jpg',
       rate: 1.5,
     },
     {
       id: 13,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'example product',
       price: '400.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-1.jpg',
       rate: 2.5,
     },{
       id: 14,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'example product',
       price: '407.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-4.jpg',
       rate: 2.5,
     },
     {
       id: 15,
-      title: 'Clothes Fashion Brand DuBai',
+      title: 'example product',
       price: '407.00',
       urlImage:
-        'https://cdn.shopify.com/s/files/1/0031/6604/4224/products/Viscose-CashmereScarf_4_230x.jpg?v=1626292263',
+        'assets/Images/products/product-8.jpg',
       rate: 2.5,
     }
   ],

@@ -8,6 +8,7 @@ function Button({
   effect = false,
   transparent = false,
   primary = false,
+  secondary=false,
   text = false,
   icon = false,
   data_hover,
@@ -20,6 +21,7 @@ function Button({
     text,
     effect,
     primary,
+    secondary,
     transparent,
     icon
   });

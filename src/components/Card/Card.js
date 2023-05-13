@@ -9,11 +9,11 @@ function Card({data,onClick}) {
     const linkUrl = `/detail/${data.id}`
     return (
     <div className={cx('card')}>
-            <Link to={linkUrl}><img className={cx('image')} src={data.urlImage}/></Link>
+            <Link to={linkUrl}><img className={cx('image')} src={require('../../'+data.urlImage)}/></Link>
         <div className={cx('event')}>
             <span className={cx('quickView')}><FontAwesomeIcon icon={faEye} /></span>
             <span className={cx('addToWish')}><FontAwesomeIcon icon={faHeart} /></span>
-            <Button primary className={cx('add')} onClick={onClick}>Add To Cart</Button>
+            <Button secondary className={cx('add')} onClick={onClick}>Add To Cart</Button>
         </div>
         <div className={cx('description')}>
             <h4 className={cx('title')}>{data.title}</h4>
