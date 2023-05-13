@@ -19,9 +19,9 @@ import {
 import Button from '~/components/Button';
 import data from '~/config/data';
 const cx = classNames.bind(style);
-const bestPrds = ()=>{
-  return data.products.filter(prd => prd.rate === 5)
-}
+const bestPrds = () => {
+  return data.products.filter((prd) => prd.rate === 5);
+};
 // console.log(bestPrds())
 function Home() {
   return (
@@ -50,7 +50,11 @@ function Home() {
             <div className={cx('content')}>
               <div className={cx('text')}>
                 <h2 className={cx('title')}>Up to 70% Off shorts and swim</h2>
-                <p className={cx('content')}>The weather started getting rough the tiny ship was tossed. If not for the courage of the fearless crew the Minnow would be lost. our dreams come true for me and you.</p>
+                <p className={cx('content')}>
+                  The weather started getting rough the tiny ship was tossed. If
+                  not for the courage of the fearless crew the Minnow would be
+                  lost. our dreams come true for me and you.
+                </p>
                 <Button className={cx('clicked')} primary>
                   SHOP NOW
                 </Button>
@@ -64,8 +68,14 @@ function Home() {
           <SwiperSlide>
             <div className={cx('content')}>
               <div className={cx('text')}>
-                <h2 className={cx('title')}>new way to purchase your products</h2>
-                <p className={cx('content')}>The weather started getting rough the tiny ship was tossed. If not for the courage of the fearless crew the Minnow would be lost. our dreams come true for me and you.</p>
+                <h2 className={cx('title')}>
+                  new way to purchase your products
+                </h2>
+                <p className={cx('content')}>
+                  The weather started getting rough the tiny ship was tossed. If
+                  not for the courage of the fearless crew the Minnow would be
+                  lost. our dreams come true for me and you.
+                </p>
                 <Button className={cx('clicked')} primary>
                   SHOP NOW
                 </Button>
@@ -81,41 +91,47 @@ function Home() {
       <div className={cx('cate')}>
         <div className={cx('box')}>
           <div className={cx('container')}>
-            <div className={cx('title')}>
-              <h4 className={cx('text')}>Shoes</h4>
+            <div className={cx('title')} style={{ top: '70%', left: '15%' }}>
+              <p>shop the latest technologies</p>
+              <h4 className={cx('text')}>save upto 40%</h4>
+              <Button primary>SHOP NOW</Button>
             </div>
             <img
               className={cx('image')}
-              src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/inst04_640x640.jpg?v=1620125974"
+              src={require('../../assets/Images/categories/category-1.jpg')}
+            />
+          </div>
+        </div>
+        <div className={cx('box')}>
+          <div className={cx('container')}>
+            <div className={cx('title')} style={{ top: '35%', left: '15%' }}>
+              <p>New arrivals</p>
+              <h4 className={cx('text')}>15 stylish bags here save upto 25%</h4>
+              <Button primary>SHOP NOW</Button>
+            </div>
+            <img
+              className={cx('image')}
+              src={require('../../assets/Images/categories/category-2.jpg')}
             />
           </div>
         </div>
         <div className={cx('box')}>
           <div className={cx('container')}>
             <div className={cx('title')}>
-              <h4 className={cx('text')}>Women</h4>
+              <p>special offers for men's</p>
+              <h4 className={cx('text')}>save upto 60%</h4>
+              <Button primary>SHOP NOW</Button>
             </div>
             <img
               className={cx('image')}
-              src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/inst04_640x640.jpg?v=1620125974"
-            />
-          </div>
-        </div>
-        <div className={cx('box')}>
-          <div className={cx('container')}>
-            <div className={cx('title')}>
-              <h4 className={cx('text')}>Man</h4>
-            </div>
-            <img
-              className={cx('image')}
-              src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/inst04_640x640.jpg?v=1620125974"
+              src={require('../../assets/Images/categories/category-3.jpg')}
             />
           </div>
         </div>
       </div>
       <div className={cx('products')}>
         <h2 className={cx('title')}>BEST PRODUCTS</h2>
-        <Products dataPerPage={8}/>
+        <Products dataPerPage={8} />
       </div>
       <div className={cx('shipping')}>
         <div className={cx('box')}>
@@ -152,6 +168,76 @@ function Home() {
           <div className={cx('benefits')}>
             <h6>OPENING ALL WEEK</h6>
             <p>8AM - 09PM</p>
+          </div>
+        </div>
+      </div>
+      <div className={cx('deals-area')}>
+        <h2 className={cx('title')}>DEALS OF THE DAY</h2>
+        <p>our vision is to be Earth's most customer centric company</p>
+        <div className={cx('wrapper')}>
+          <div className={cx('accessories-block')}>
+            <h5>mens accessories</h5>
+            <p>
+              The weather started getting rough the tossed. If not for the
+              courage of the fearless crew the Minnow would be lost. would be
+              lost.
+            </p>
+            <ul>
+              <li>
+                <a href="#">
+                  <img
+                    className={cx('image')}
+                    src={require('../../assets/Images/deals/deal-3.jpg')}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    className={cx('image')}
+                    src={require('../../assets/Images/deals/deal-4.jpg')}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    className={cx('image')}
+                    src={require('../../assets/Images/deals/deal-5.jpg')}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    className={cx('image')}
+                    src={require('../../assets/Images/deals/deal-6.jpg')}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    className={cx('image')}
+                    src={require('../../assets/Images/deals/deal-7.jpg')}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    className={cx('image')}
+                    src={require('../../assets/Images/deals/deal-8.jpg')}
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className={cx('saleUp-img')}>
+            <img
+              className={cx('image')}
+              src={require('../../assets/Images/deals/deal-9.jpg')}
+            />
           </div>
         </div>
       </div>

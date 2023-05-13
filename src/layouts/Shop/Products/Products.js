@@ -6,7 +6,6 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { ShopContext } from '~/context';
 import SweetPagination from 'sweetpagination';
 
-import './pagination.scss';
 import CardLoading from '~/components/Card/Cardloading';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/autoplay';
@@ -95,6 +94,7 @@ function Products({ dataPerPage = 10, isSlide = false }) {
             dataPerPage={dataPerPage}
             getData={dataPrds}
             navigation={true}
+            getStyle={'style-2'}
           />
         </div>
       </div>

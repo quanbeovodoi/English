@@ -123,10 +123,10 @@ const data = {
   menuHeading: [
     { id: 1, title: 'Home', url: '/' },
     { id: 2, title: 'Shop', url: '/shop' },
-    { id: 3, title: 'Products', url: '/products' },
-    { id: 4, title: 'Blog', url: '/blog' },
+    { id: 3, title: 'Products', url: '/' },
+    { id: 4, title: 'Blog', url: '/' },
     { id: 5, title: 'About Us', url: '/about_us' },
-    { id: 6, title: 'Contact Us', url: '/contact_us' },
+    { id: 6, title: 'Contact Us', url: '/' },
     { id: 7, title: 'Profile', url: '/Profile' },
   ],
   sideBarMenu: [

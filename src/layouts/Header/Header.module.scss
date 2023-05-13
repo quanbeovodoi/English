@@ -1,8 +1,8 @@
 .image {
   display: flex;
   .title {
-    span{
-        color: var(--primary);
+    span {
+      color: var(--primary);
     }
     display: flex;
     height: 100%;
@@ -27,60 +27,75 @@
   flex-direction: row;
   // box-shadow: rgba(39, 39, 39, 0.348) 0px 2px 8px;
   justify-content: space-between;
-  
+
   background-color: #ffff;
   padding: 0 10px;
- 
 }
-.container{
+.container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1280px;
   margin: 0 auto;
 }
-.top-heading{
-    font-size: 1.4rem;
-    display: inline-flex;
-    justify-content: space-between;
-    background-color: #f2f2f2;
-    align-items: center;
-    line-height: 60px;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    h5 {
-        font-size: inherit;
-        font-weight: 500;
-        color: #333;
-        display: inline-block;
-        margin: 0;
-        line-height: 28px;
-        letter-spacing: 0.28px;
-        padding-right: 30px;
-        text-transform: capitalize;
+.top-heading {
+  font-size: 1.4rem;
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  align-items: center;
+  line-height: 60px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  @media only screen and (max-width: 920px) {
+    line-height: 30px;
+    .container {
+      flex-direction: column;
+      .navbar-links {
+        align-items: center;
+        justify-content: center;
+        .icon {
+          &::before {
+            display: none;
+          }
+        }
       }
-    .navbar-links{
-        display: flex;
-        .item{
-            display: block;
-            padding: 0 10px;
-            span{
-              padding-right: 10px;
-            }
-        }
-        .icon{
-            padding: 0 20px;
-            position: relative;
-            &::before{
-                background-color: #cdcdcd;
-                content: "";
-                height: 60px;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 1px;
-            }
-        }
     }
+  }
+
+  h5 {
+    font-size: inherit;
+    font-weight: 500;
+    color: #333;
+    display: inline-block;
+    margin: 0;
+    line-height: 28px;
+    letter-spacing: 0.28px;
+    padding-right: 30px;
+    text-transform: capitalize;
+  }
+  .navbar-links {
+    display: flex;
+    .item {
+      display: block;
+      padding: 0 10px;
+      span {
+        padding-right: 10px;
+      }
+    }
+    .icon {
+      padding: 0 20px;
+      position: relative;
+      &::before {
+        background-color: #cdcdcd;
+        content: '';
+        height: 60px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+      }
+    }
+  }
 }

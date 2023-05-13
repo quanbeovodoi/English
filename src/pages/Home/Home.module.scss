@@ -2,14 +2,14 @@
   width: 100%;
   max-height: 750px;
   object-fit: cover;
-  @media only screen and (max-width: 720px){
+  @media only screen and (max-width: 720px) {
     height: 650px;
   }
 }
-.slideContainer{
+.slideContainer {
   position: relative;
-  .text{
-    top: 20%;
+  .text {
+    top: 30%;
     left: 0;
     width: 100%;
     margin: 0 auto;
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    .content{
+    .content {
       max-width: 720px;
       text-align: center;
       font-size: 1.2rem;
@@ -26,16 +26,21 @@
       font-weight: 300;
       padding-bottom: 20px;
     }
-    h2{
+    h2 {
       font-size: 56px;
       font-weight: 400;
-      padding: 15px;
+      padding: 20px 15px;
       text-shadow: 2px 2px #aaaaaa;
     }
   }
 }
 .products {
   .title {
+    font-size: 32px;
+    letter-spacing: 1.28px;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: "montserratlight";
     text-align: center;
     margin: 0 auto;
     width: 80%;
@@ -61,28 +66,28 @@
   display: flex;
   padding: 20px 0;
   flex-wrap: wrap;
-  .box{
+  .box {
     padding: 10px;
     width: 33.3%;
     position: relative;
     overflow: hidden;
-    &:hover .image{
+    &:hover .image {
       transform: scale(1.5);
     }
-    .container{
+    .container {
       display: flex;
       flex-direction: row;
       width: 100%;
       overflow: hidden;
     }
-    @media only screen and (max-width: 960px){
+    @media only screen and (max-width: 1280px) {
       width: 50%;
-      &:last-child{
+      &:last-child {
         width: 100%;
         max-height: 450px;
       }
     }
-    @media only screen and (max-width: 720px){
+    @media only screen and (max-width: 720px) {
       width: 100%;
       max-height: 450px;
     }
@@ -92,21 +97,28 @@
       height: 100%;
     }
     .title {
-      width: 100%;
-      height: 100%;
-      display: flex;
       z-index: 2;
-      top: 0;
-      left: 0;
+      top: 48%;
+      bottom: auto;
+      left: 30px;
+      right: auto;
       padding: 10px;
       position: absolute;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      max-width: 270px;
+      margin: 0 auto 15px;
+      text-align: center;
+      transform: translate(0%, -50%);
+      text-shadow: 1px 1px #ffffff;
+      p {
+        font-weight: 700;
+      }
       .text {
-        font-family: 'Arizonia', cursive;
-        background-color: #878787;
-        color: #fff;
+        font-family: 'montserratsemi_bold';
+        line-height: 26px;
+        letter-spacing: 0.56px;
+        color: #333;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -116,10 +128,12 @@
     }
   }
 }
+
 .shipping {
-    width: fit-content;
-    margin: 0 auto;
-    display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 55px;
   .box {
     flex: 0 0 25%;
     display: flex;
@@ -147,6 +161,94 @@
         line-height: 18px;
         margin-bottom: 0;
         color: #51545f;
+      }
+    }
+  }
+}
+
+.deals-area {
+  margin:  0 auto;
+  max-width: 1280px;
+  margin-bottom: 55px;
+  text-align: center;
+  position: relative;
+  text-align: center;
+  .title {
+    color: var(--primary);
+    font-family: 'montserratlight';
+    font-size: 32px;
+    line-height: 24px;
+    letter-spacing: 1.28px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  p {
+    color: #777;
+    font-size: 13px;
+    letter-spacing: 0.52px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .accessories-block {
+      width: 40%;
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding-top: 40px;
+      text-align: center;
+      h5{
+        color: #333;
+        font-family: 'montserratsemi_bold';
+        font-size: 22px;
+        margin-top: 0;
+        letter-spacing: 0.88px;
+        text-transform: uppercase;
+      }
+      p{
+        color: #777;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.64px;
+        margin-bottom: 10px;
+        padding: 0 50px;
+      }
+      ul {
+        display: inline-block;
+        list-style: none;
+        margin-bottom: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        flex-wrap: wrap;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 15px;
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+    .saleUp-img{
+      width: 40%;
+      margin: 10px;
+      height: 525px;
+      img{
+        width: 100%;
+        height: 100%;
       }
     }
   }
