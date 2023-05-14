@@ -134,6 +134,7 @@
   margin: 0 auto;
   display: flex;
   margin-bottom: 55px;
+  flex-wrap: wrap;
   .box {
     flex: 0 0 25%;
     display: flex;
@@ -142,6 +143,12 @@
     border-right: 1px solid #fff;
     padding-left: 25px;
     align-items: center;
+    @media screen and (max-width:920px) {
+      flex: 0 0 50%;
+    }
+    @media screen and (max-width:520px) {
+      flex: 0 0 100%;
+    }
     .icon {
       color: var(--primary);
       font-size: 30px;
@@ -256,6 +263,8 @@
     }
     @media screen and (max-width:1064px) {
       display: block;
+      max-width: 560px;
+      margin: 0 auto;
       .accessories-block,.saleUp-img{
         width: 100%;
       }
