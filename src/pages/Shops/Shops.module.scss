@@ -1,3 +1,7 @@
+.sidebar{
+  width: 33.3%;
+  padding-right: 20px;
+}
 .bg {
   background-color: #252531;
   margin: 0 auto;
@@ -41,6 +45,7 @@
   display: flex;
   max-width: 1600px;
   margin: 0 auto;
+  
 }
 .sidebar {
       width: 33.33333333%;
@@ -150,4 +155,7 @@
       }
     }
   }
+}
+.product{
+  width: 67.7%;
 }

@@ -1,7 +1,9 @@
 import config from '~/config';
 import Test from '~/layouts/Test';
 import AboutUs from '~/pages/AboutUs';
+import Blogs from '~/pages/Blogs';
 import Cart from '~/pages/CartPage';
+import Contact from '~/pages/Contact';
 import Detail from '~/pages/Detail';
 import Home from '~/pages/Home';
 import Profile from '~/pages/Profile';
@@ -17,6 +19,8 @@ const publicRoutes = [
   { path: config.routes.cart, component: Cart },
   { path: config.routes.detailProduct, component: Detail ,layout:'unset'},
   { path: config.routes.test, component: Test },
+  { path: config.routes.contactUs, component: Contact ,layout:'unset'},
+  { path: config.routes.blog, component: Blogs ,layout:'unset'},
 ];
 
 const privateRoutes = [];

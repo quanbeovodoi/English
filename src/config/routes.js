@@ -6,6 +6,8 @@ const routes = {
     quiz:'/quiz',
     cart:'/cart',
     detailProduct:'/detail/:detailId',
-    test:'/test'
+    test:'/test',
+    contactUs:'/contact_us',
+    blog:'/blog'
 }
 export default routes;

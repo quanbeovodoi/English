@@ -1,3 +1,4 @@
+import Banner from '~/components/Banner';
 import styles from './AboutUs.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
@@ -5,9 +6,7 @@ function AboutUs() {
   return (
     <>
       <div className={cx('bg')}>
-        <div className={cx('container', 'heading')}>
-          <h1>About us</h1>
-        </div>
+          <Banner title={'About Us'} />
       </div>
       <div>
         <div className={cx('container', 'flex')}>

@@ -1,0 +1,12 @@
+.wrapper{
+    .row{
+        display: flex;
+        .col{
+            padding: 20px;
+        }
+        .col:nth-child(2){
+            width: 40%;
+        }
+    }
+    
+}

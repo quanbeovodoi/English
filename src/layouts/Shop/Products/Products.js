@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import data from '~/config/data';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { ShopContext } from '~/context';
-import SweetPagination from 'sweetpagination';
+// import SweetPagination from 'sweetpagination';
 
 import CardLoading from '~/components/Card/Cardloading';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -19,6 +19,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+import Pagination from '~/components/Pagination';
 const cx = classNames.bind(style);
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const dataPrds = data.products;
@@ -28,12 +29,13 @@ function Products({ dataPerPage = 10, isSlide = false }) {
   const { addToCart } = useContext(ShopContext);
   const navigationPrevRef = useRef();
   const navigationNextRef = useRef();
+  console.log('rerender')
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
   if (isSlide) {
     return (
-      <>
+
         <div className={cx('container')}>
           <div className={cx('navigation')}>
             <div className={cx('item', 'prev')} ref={navigationPrevRef}>
@@ -72,7 +74,6 @@ function Products({ dataPerPage = 10, isSlide = false }) {
             ))}
           </Swiper>
         </div>
-      </>
     );
   } else
     return (
@@ -89,13 +90,14 @@ function Products({ dataPerPage = 10, isSlide = false }) {
           ))}
         </div>
         <div className={cx('pagination')}>
-          <SweetPagination
+          {/* <SweetPagination
             currentPageData={setCurrentPageData}
             dataPerPage={dataPerPage}
             getData={dataPrds}
             navigation={true}
             getStyle={'style-2'}
-          />
+          /> */}
+          <Pagination data={dataPrds} currentPageData={setCurrentPageData}/>
         </div>
       </div>
     );

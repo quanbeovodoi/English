@@ -55,7 +55,7 @@ function Home() {
                   not for the courage of the fearless crew the Minnow would be
                   lost. our dreams come true for me and you.
                 </p>
-                <Button className={cx('clicked')} primary>
+                <Button className={cx('clicked')} secondary>
                   SHOP NOW
                 </Button>
               </div>
@@ -76,7 +76,7 @@ function Home() {
                   not for the courage of the fearless crew the Minnow would be
                   lost. our dreams come true for me and you.
                 </p>
-                <Button className={cx('clicked')} primary>
+                <Button className={cx('clicked')} secondary>
                   SHOP NOW
                 </Button>
               </div>
