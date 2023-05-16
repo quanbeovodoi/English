@@ -1,0 +1,126 @@
+.wrapper {
+  font-size: 1.2rem;
+  max-width: 920px;
+  margin: 0 auto;
+  p{
+    margin: 10px 0;
+    &.txt{
+      margin-left: 10px;
+    }
+  }
+  label{
+    width: 33.3%;
+  }
+  input[type=text],input[type=date]{
+    font-size: 1.2rem;
+    width: 66.7%;
+    padding: 5px;
+    outline: none;
+    border: 1px solid var(--primary);
+    margin-left: 15px;
+  }
+  .container {
+    h1,h2 {
+      color: var(--primary);
+      margin-top: 15px;
+      font-size: 1.7rem;
+      font-weight: 400;
+      text-align: center;
+    }
+    .sub-heading {
+      color: var(--secondary);
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+    .content{
+      .content-info{
+        display: flex;
+      }
+    }
+    .box{
+      padding: 15px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      margin: 5px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease-in-out;
+      
+      h5{
+        font-size: 2rem;
+        color: var(--primary);
+      }
+      &.follow{
+        cursor: pointer;
+        color: var(--primary);
+        &:hover{
+          background-color: var(--primary);
+          color: #fff;
+        }
+      }
+    }
+    .sub-content{
+      padding: 25px;
+      text-align: justify;
+      h2{
+        padding-top: 15px;
+        border-top: 1px solid #e78383b3;
+      }
+    }
+    .row {
+      display: flex;
+      padding: 15px;
+      .col {
+        margin: 5px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        &.left,
+        &.right {
+          margin-top: 15px;
+          margin-left: 15px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        &.left {
+          width: 33.3%;
+          padding: 15px;
+          align-items: center;
+          justify-content: center;
+          ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            li {
+              width: 100%;
+              .btn {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .image {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .content{
+      .row{
+        flex-direction: column;
+      }
+    }
+  }
+}
